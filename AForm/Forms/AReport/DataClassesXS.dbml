@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="real" Class="DataClassesXSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DBSRV;Initial Catalog=real;Integrated Security=True" SettingsObjectName="AForm.Properties.Settings" SettingsPropertyName="realConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="" Member="Class1">
+    <Type Name="Class1" />
+    <UpdateFunction FunctionId="FunctionId1" />
+  </Table>
+  <Function Id="FunctionId1" Name="dbo.up_Manage_SalesReport" Method="up_Manage_SalesReport">
+    <Parameter Name="datefrom" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="dateto" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

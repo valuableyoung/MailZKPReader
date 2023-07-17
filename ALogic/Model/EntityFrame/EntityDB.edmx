@@ -1,0 +1,1276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Entity.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="idCompany" />
+          </Key>
+          <Property Name="idCompany" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nCompany" Type="varchar" MaxLength="300" />
+          <Property Name="nCity" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CompanyEntity">
+          <Key>
+            <PropertyRef Name="idCompanyEntity" />
+          </Key>
+          <Property Name="idCompanyEntity" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idCompany" Type="int" Nullable="false" />
+          <Property Name="nEntity" Type="varchar" MaxLength="300" />
+          <Property Name="idCompanyTemp" Type="int" Nullable="false" />
+          <Property Name="fUr" Type="int" Nullable="false" />
+          <Property Name="fPlace" Type="int" Nullable="false" />
+          <Property Name="fSP" Type="int" Nullable="false" />
+          <Property Name="fTD" Type="int" Nullable="false" />
+          <Property Name="fTP" Type="int" Nullable="false" />
+          <Property Name="iKontr" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="contract">
+          <Key>
+            <PropertyRef Name="idConvention" />
+          </Key>
+          <Property Name="idConvention" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_firm" Type="decimal" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="id_kontr" Type="decimal" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="id_contract" Type="int" Nullable="false" />
+          <Property Name="year" Type="int" />
+          <Property Name="date_contract" Type="smalldatetime" Nullable="false" />
+          <Property Name="nom_contract" Type="varchar" MaxLength="25" />
+          <Property Name="prolong" Type="tinyint" Nullable="false" />
+          <Property Name="DateEndContract" Type="smalldatetime" Nullable="false" />
+          <Property Name="DaysKred" Type="smallint" />
+          <Property Name="idTypeDaysKred" Type="smallint" />
+          <Property Name="fModul" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="commentary" Type="varchar" MaxLength="255" />
+          <Property Name="commentaryShort" Type="varchar" MaxLength="50" />
+          <Property Name="fDefault" Type="tinyint" />
+          <Property Name="idStatusContract" Type="smallint" Nullable="false" />
+          <Property Name="f1c" Type="tinyint" />
+          <Property Name="SumCred" Type="int" />
+          <Property Name="RealDayCred" Type="int" />
+          <Property Name="MaxSumCred" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="SummContract" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="idDoc" Type="char" MaxLength="35" />
+          <Property Name="fBackOrder" Type="smallint" Nullable="false" />
+          <Property Name="fMarketAgreement" Type="smallint" Nullable="false" />
+          <Property Name="fSimpleFinPlan" Type="smallint" Nullable="false" />
+          <Property Name="MethodCalcPlan" Type="int" />
+          <Property Name="idFormContract" Type="int" />
+          <Property Name="idTypeDelivery" Type="int" />
+          <Property Name="idTypePay" Type="int" />
+          <Property Name="idFormPay" Type="int" />
+          <Property Name="fEDI" Type="int" Nullable="false" />
+          <Property Name="ComentForUPD" Type="varchar" MaxLength="250" />
+          <Property Name="idTerritory" Type="int" Nullable="false" />
+          <Property Name="idDirect" Type="int" Nullable="false" />
+          <Property Name="fTranzit" Type="int" Nullable="false" />
+          <Property Name="idTranzitSklad" Type="int" Nullable="false" />
+          <Property Name="fBackOrderInner" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Decree">
+          <Key>
+            <PropertyRef Name="IdDecree" />
+          </Key>
+          <Property Name="IdDecree" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nDecree" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DateDecree" Type="datetime" Nullable="false" />
+          <Property Name="NomDecree" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TitleDecree" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="nTypeSign" Type="varchar" MaxLength="100" />
+          <Property Name="nSign" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="LogeOrder">
+          <Key>
+            <PropertyRef Name="idRow" />
+          </Key>
+          <Property Name="idRow" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idKontr" Type="int" Nullable="false" />
+          <Property Name="DateAction" Type="datetime" Nullable="false" />
+          <Property Name="idTypeAction" Type="smallint" Nullable="false" />
+          <Property Name="ContentAction" Type="varchar" MaxLength="1000" Nullable="false" />
+          <Property Name="fSendInfo" Type="tinyint" Nullable="false" />
+          <Property Name="idtypedoc" Type="int" />
+          <Property Name="iddoc" Type="varchar" MaxLength="50" />
+          <Property Name="NameUser" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="rKontrDecree">
+          <Key>
+            <PropertyRef Name="IdKontrDecree" />
+          </Key>
+          <Property Name="IdKontrDecree" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdDecree" Type="int" Nullable="false" />
+          <Property Name="IdKontr" Type="int" Nullable="false" />
+          <Property Name="fDossier" Type="bit" Nullable="false" />
+          <Property Name="fSee" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="rRoleUser">
+          <Key>
+            <PropertyRef Name="IdKontr" />
+            <PropertyRef Name="IdRole" />
+          </Key>
+          <Property Name="IdKontr" Type="int" Nullable="false" />
+          <Property Name="IdRole" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="s_CondKontr">
+          <Key>
+            <PropertyRef Name="id_cond" />
+          </Key>
+          <Property Name="id_cond" Type="tinyint" Nullable="false" />
+          <Property Name="n_cond" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_new" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sAutoDelivery">
+          <Key>
+            <PropertyRef Name="idAuto" />
+          </Key>
+          <Property Name="idAuto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nAuto" Type="varchar" MaxLength="80" />
+          <Property Name="Tonnage" Type="int" />
+          <Property Name="Volume" Type="int" />
+          <Property Name="RegNumber" Type="varchar" MaxLength="15" />
+          <Property Name="OurAuto" Type="int" Nullable="false" />
+          <Property Name="idDriverDefault" Type="decimal" Precision="9" Scale="0" />
+          <Property Name="idStatus" Type="int" Nullable="false" />
+          <Property Name="Pallet" Type="int" Nullable="false" />
+          <Property Name="EuroPalet" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sChildren">
+          <Key>
+            <PropertyRef Name="idChild" />
+          </Key>
+          <Property Name="idKontr" Type="decimal" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="nChild" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="idChild" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateBirth" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="varchar" MaxLength="180" />
+        </EntityType>
+        <EntityType Name="sLogTypeAction">
+          <Key>
+            <PropertyRef Name="idTypeAction" />
+          </Key>
+          <Property Name="idTypeAction" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nTypeAction" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="fNeedForMail" Type="tinyint" Nullable="false" />
+          <Property Name="SendTo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="spr_agent_kontr">
+          <Key>
+            <PropertyRef Name="id_direct" />
+            <PropertyRef Name="id_kontr" />
+            <PropertyRef Name="id_agent" />
+          </Key>
+          <Property Name="id_direct" Type="decimal" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="id_kontr" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="id_agent" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="last_compare" Type="datetime" />
+          <Property Name="compare" Type="tinyint" />
+          <Property Name="gr_compare" Type="tinyint" />
+          <Property Name="category" Type="int" />
+          <Property Name="id_day" Type="tinyint" />
+          <Property Name="id_week" Type="tinyint" />
+          <Property Name="discount_real" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="PerDeviation" Type="decimal" Precision="9" Scale="4" />
+        </EntityType>
+        <EntityType Name="spr_kontr">
+          <Key>
+            <PropertyRef Name="id_kontr" />
+          </Key>
+          <Property Name="id_kontr" Type="decimal" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="n_kontr" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="n_kontr_full" Type="varchar" MaxLength="255" />
+          <Property Name="n_kontr_short" Type="varchar" MaxLength="255" />
+          <Property Name="n_board" Type="varchar" MaxLength="50" />
+          <Property Name="adress_ur" Type="varchar" MaxLength="200" />
+          <Property Name="adress_fact" Type="varchar" MaxLength="200" />
+          <Property Name="tel1" Type="varchar" MaxLength="30" />
+          <Property Name="tel2" Type="varchar" MaxLength="30" />
+          <Property Name="tel3" Type="varchar" MaxLength="30" />
+          <Property Name="tel4" Type="varchar" MaxLength="30" />
+          <Property Name="tel5" Type="varchar" MaxLength="30" />
+          <Property Name="el_mail" Type="varchar" MaxLength="40" />
+          <Property Name="inn" Type="char" MaxLength="25" />
+          <Property Name="okonh" Type="varchar" MaxLength="30" />
+          <Property Name="okpo" Type="varchar" MaxLength="30" />
+          <Property Name="n_boss" Type="varchar" MaxLength="100" />
+          <Property Name="n_gl_buh" Type="varchar" MaxLength="30" />
+          <Property Name="n_cash" Type="varchar" MaxLength="50" />
+          <Property Name="id_agent" Type="decimal" Precision="9" Scale="0" />
+          <Property Name="id_torg" Type="decimal" Precision="9" Scale="0" />
+          <Property Name="id_firm" Type="decimal" Precision="9" Scale="0" />
+          <Property Name="in_tax_def" Type="decimal" Precision="2" Scale="0" />
+          <Property Name="id_region" Type="smallint" />
+          <Property Name="id_road" Type="decimal" Precision="9" Scale="0" />
+          <Property Name="t_serv" Type="decimal" Precision="9" Scale="0" />
+          <Property Name="id_cond" Type="tinyint" />
+          <Property Name="faice" Type="char" MaxLength="1" />
+          <Property Name="seller_bayer" Type="tinyint" Nullable="false" />
+          <Property Name="employer" Type="tinyint" />
+          <Property Name="agent" Type="tinyint" Nullable="false" />
+          <Property Name="bank" Type="tinyint" Nullable="false" />
+          <Property Name="mol" Type="tinyint" Nullable="false" />
+          <Property Name="firma" Type="tinyint" Nullable="false" />
+          <Property Name="investor_shareholder" Type="tinyint" Nullable="false" />
+          <Property Name="ind_business" Type="tinyint" />
+          <Property Name="torg" Type="tinyint" />
+          <Property Name="srok_kred" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="name_user" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="id_user" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="sql_id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="id_post" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="gr_compare" Type="tinyint" />
+          <Property Name="group_inv" Type="tinyint" />
+          <Property Name="last_compare" Type="datetime" />
+          <Property Name="compare" Type="tinyint" Nullable="false" />
+          <Property Name="commentary" Type="varchar" MaxLength="255" />
+          <Property Name="kontr_group" Type="smallint" />
+          <Property Name="sort_group" Type="tinyint" />
+          <Property Name="seller_bayer_10" Type="tinyint" Nullable="false" />
+          <Property Name="driver" Type="smallint" />
+          <Property Name="category" Type="tinyint" />
+          <Property Name="kpp" Type="varchar" MaxLength="30" />
+          <Property Name="wholesale" Type="tinyint" />
+          <Property Name="delivery" Type="tinyint" />
+          <Property Name="login_www" Type="varchar" MaxLength="50" />
+          <Property Name="pass_www" Type="varchar" MaxLength="50" />
+          <Property Name="id_level" Type="smallint" />
+          <Property Name="update_price" Type="smallint" />
+          <Property Name="per_discount" Type="decimal" Precision="18" Scale="5" />
+          <Property Name="kol_n" Type="smallint" Nullable="false" />
+          <Property Name="id_filial" Type="smallint" Nullable="false" />
+          <Property Name="filial" Type="smallint" Nullable="false" />
+          <Property Name="id_type_tov" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="svid_nomer" Type="varchar" MaxLength="80" />
+          <Property Name="svid_vidano" Type="varchar" MaxLength="250" />
+          <Property Name="id_direct" Type="decimal" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="n_kontr_title" Type="varchar" MaxLength="255" />
+          <Property Name="autolink" Type="tinyint" Nullable="false" />
+          <Property Name="ogrn" Type="char" MaxLength="30" />
+          <Property Name="b_day" Type="smalldatetime" />
+          <Property Name="m_truck" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="v_truck" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="post_cat" Type="smallint" />
+          <Property Name="salary_incl" Type="tinyint" />
+          <Property Name="salary_type" Type="tinyint" />
+          <Property Name="ticket_cond" Type="tinyint" Nullable="false" />
+          <Property Name="ticket_holder" Type="decimal" Precision="9" Scale="0" />
+          <Property Name="id_stamp" Type="tinyint" />
+          <Property Name="pasport" Type="int" />
+          <Property Name="receipt_pasport" Type="varchar" MaxLength="150" />
+          <Property Name="series_pasport" Type="char" MaxLength="10" />
+          <Property Name="kred_sum" Type="int" />
+          <Property Name="driver_acc" Type="varchar" MaxLength="50" />
+          <Property Name="kred_type" Type="int" />
+          <Property Name="kder_sum_kontr" Type="int" />
+          <Property Name="time_invoice" Type="tinyint" />
+          <Property Name="k_rate" Type="tinyint" />
+          <Property Name="Job" Type="varchar" MaxLength="250" />
+          <Property Name="Spec" Type="varchar" MaxLength="50" />
+          <Property Name="id_ekontr" Type="varchar" MaxLength="32" />
+          <Property Name="el_mail_corporate" Type="varchar" MaxLength="60" />
+          <Property Name="print_form" Type="char" MaxLength="20" />
+          <Property Name="sfInDelivery" Type="smallint" Nullable="false" />
+          <Property Name="abc" Type="varchar" MaxLength="50" />
+          <Property Name="icqNumber" Type="bigint" />
+          <Property Name="idCondEmpl" Type="tinyint" Nullable="false" />
+          <Property Name="location" Type="varchar" MaxLength="200" />
+          <Property Name="print_translate" Type="tinyint" />
+          <Property Name="Retail" Type="tinyint" Nullable="false" />
+          <Property Name="abc_estimate" Type="varchar" MaxLength="50" />
+          <Property Name="presense_inn" Type="tinyint" Nullable="false" />
+          <Property Name="presense_svid" Type="tinyint" Nullable="false" />
+          <Property Name="idTownship" Type="int" Nullable="false" />
+          <Property Name="presense_pasport" Type="int" Nullable="false" />
+          <Property Name="n_lpr" Type="varchar" MaxLength="100" />
+          <Property Name="tel_lpr" Type="varchar" MaxLength="30" />
+          <Property Name="buy_agent" Type="tinyint" Nullable="false" />
+          <Property Name="fOrder" Type="smallint" />
+          <Property Name="pseudonym" Type="varchar" MaxLength="30" />
+          <Property Name="bigcomment" Type="text" />
+          <Property Name="idFond" Type="int" Nullable="false" />
+          <Property Name="supplier" Type="tinyint" Nullable="false" />
+          <Property Name="SupplierService" Type="tinyint" Nullable="false" />
+          <Property Name="f1c" Type="tinyint" Nullable="false" />
+          <Property Name="storekeeper" Type="varchar" MaxLength="100" />
+          <Property Name="nbossr" Type="varchar" MaxLength="100" />
+          <Property Name="firmfor1c" Type="tinyint" Nullable="false" />
+          <Property Name="PassWithCar" Type="tinyint" Nullable="false" />
+          <Property Name="TNInDelivery" Type="smallint" Nullable="false" />
+          <Property Name="PostOfficeBox" Type="varchar" MaxLength="200" />
+          <Property Name="fTransportCompany" Type="tinyint" Nullable="false" />
+          <Property Name="fPraisImag" Type="smallint" />
+          <Property Name="RateCompareMM" Type="int" />
+          <Property Name="latitube" Type="varchar" MaxLength="50" />
+          <Property Name="longitube" Type="varchar" MaxLength="50" />
+          <Property Name="PercentForBonuses" Type="decimal" Precision="9" Scale="4" Nullable="false" />
+          <Property Name="fNotIntegrationNakl" Type="smallint" Nullable="false" />
+          <Property Name="nPostForContract" Type="varchar" MaxLength="50" />
+          <Property Name="fNewSaleContractForCash" Type="smallint" />
+          <Property Name="prefix" Type="varchar" MaxLength="10" />
+          <Property Name="CountAccesseOrder" Type="smallint" />
+          <Property Name="SexBossFoContract" Type="char" MaxLength="1" />
+          <Property Name="TypeDeliveryDef" Type="int" Nullable="false" />
+          <Property Name="FederalImag" Type="int" Nullable="false" />
+          <Property Name="fNotUsePriceRec" Type="smallint" />
+          <Property Name="svidDate" Type="datetime" />
+          <Property Name="idSystemTax" Type="int" />
+          <Property Name="idFirmOil" Type="int" />
+          <Property Name="fneedunload" Type="smallint" Nullable="false" />
+          <Property Name="fNotDivision" Type="smallint" Nullable="false" />
+          <Property Name="idTypePayDef" Type="smallint" />
+          <Property Name="TimeReaction" Type="int" />
+          <Property Name="fCustomer" Type="tinyint" Nullable="false" />
+          <Property Name="fSupplier" Type="tinyint" Nullable="false" />
+          <Property Name="fEconomicEntity" Type="tinyint" Nullable="false" />
+          <Property Name="fPointOfStorage" Type="tinyint" Nullable="false" />
+          <Property Name="fWorkWithOil" Type="tinyint" Nullable="false" />
+          <Property Name="fWorkWithAutoParts" Type="tinyint" Nullable="false" />
+          <Property Name="fNeedTTNInDelivery" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sRole">
+          <Key>
+            <PropertyRef Name="IdRole" />
+          </Key>
+          <Property Name="IdRole" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NRole" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Comment" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="StaffMove">
+          <Key>
+            <PropertyRef Name="IdStaffMove" />
+          </Key>
+          <Property Name="IdStaffMove" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idKontr" Type="int" Nullable="false" />
+          <Property Name="idPost" Type="int" Nullable="false" />
+          <Property Name="DateS" Type="datetime" Nullable="false" />
+          <Property Name="DateE" Type="datetime" />
+          <Property Name="idUnit" Type="int" Nullable="false" />
+          <Property Name="nDecree" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="idFirm" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tabel">
+          <Key>
+            <PropertyRef Name="id_row" />
+          </Key>
+          <Property Name="id_row" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_kontr" Type="decimal" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="time_end" Type="datetime" />
+          <Property Name="time_start" Type="datetime" Nullable="false" />
+          <Property Name="type_row" Type="smallint" Nullable="false" />
+          <Property Name="commentary" Type="varchar" MaxLength="100" />
+          <Property Name="id_online" Type="smallint" />
+          <Property Name="id_pc" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tookBonus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomDoc" Type="char" MaxLength="35" Nullable="false" />
+          <Property Name="IdDoc" Type="char" MaxLength="35" Nullable="false" />
+          <Property Name="status" Type="bit" Nullable="false" />
+          <Property Name="modDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Function Name="up_getEorderUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="login" Type="varchar" Mode="In" />
+          <Parameter Name="pass" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="up_getUserBonus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="datedocstart" Type="date" Mode="In" />
+          <Parameter Name="datedocend" Type="date" Mode="In" />
+          <Parameter Name="idKontrDb" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="up_go_next_month" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="next_m" Type="smallint" Mode="In" />
+          <Parameter Name="next_y" Type="smallint" Mode="In" />
+        </Function>
+        <EntityContainer Name="EntityStoreContainer">
+          <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="CompanyEntity" EntityType="Self.CompanyEntity" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="contract" EntityType="Self.contract" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Decree" EntityType="Self.Decree" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="LogeOrder" EntityType="Self.LogeOrder" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="rKontrDecree" EntityType="Self.rKontrDecree" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="rRoleUser" EntityType="Self.rRoleUser" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="s_CondKontr" EntityType="Self.s_CondKontr" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="sAutoDelivery" EntityType="Self.sAutoDelivery" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="sChildren" EntityType="Self.sChildren" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="sLogTypeAction" EntityType="Self.sLogTypeAction" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="spr_agent_kontr" EntityType="Self.spr_agent_kontr" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="spr_kontr" EntityType="Self.spr_kontr" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="sRole" EntityType="Self.sRole" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="StaffMove" EntityType="Self.StaffMove" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tabel" EntityType="Self.tabel" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tookBonus" EntityType="Self.tookBonus" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Entity" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="Decree" EntityType="Entity.Decree" />
+          <EntitySet Name="sAutoDelivery" EntityType="Entity.sAutoDelivery" />
+          <EntitySet Name="sChildren" EntityType="Entity.sChildren" />
+          <EntitySet Name="StaffMove" EntityType="Entity.StaffMove" />
+          <EntitySet Name="tabel" EntityType="Entity.tabel" />
+          <EntitySet Name="contract" EntityType="Entity.contract" />
+          <EntitySet Name="s_CondKontr" EntityType="Entity.s_CondKontr" />
+          <EntitySet Name="spr_agent_kontr" EntityType="Entity.spr_agent_kontr" />
+          <EntitySet Name="tookBonus" EntityType="Entity.tookBonus" />
+          <EntitySet Name="LogeOrder" EntityType="Entity.LogeOrder" />
+          <EntitySet Name="sLogTypeAction" EntityType="Entity.sLogTypeAction" />
+          <EntitySet Name="rRoleUser" EntityType="Entity.rRoleUser" />
+          <EntitySet Name="sRole" EntityType="Entity.sRole" />
+          <EntitySet Name="spr_kontr" EntityType="Entity.spr_kontr" />
+          <FunctionImport Name="up_getEorderUser" ReturnType="Collection(Entity.EordrUser)">
+            <Parameter Name="login" Mode="In" Type="String" />
+            <Parameter Name="pass" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="rKontrDecree" EntityType="Entity.rKontrDecree" />
+          <EntitySet Name="Company" EntityType="Entity.Company" />
+          <EntitySet Name="CompanyEntity" EntityType="Entity.CompanyEntity" />
+        </EntityContainer>
+        <EntityType Name="Decree">
+          <Key>
+            <PropertyRef Name="IdDecree" />
+          </Key>
+          <Property Name="IdDecree" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="DateDecree" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="nDecree" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="NomDecree" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TitleDecree" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="nTypeSign" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nSign" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="sAutoDelivery">
+          <Key>
+            <PropertyRef Name="idAuto" />
+          </Key>
+          <Property Name="idAuto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="nAuto" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="Tonnage" Type="Int32" />
+          <Property Name="Volume" Type="Int32" />
+          <Property Name="RegNumber" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="OurAuto" Type="Int32" Nullable="false" />
+          <Property Name="idDriverDefault" Type="Decimal" Precision="9" Scale="0" />
+          <Property Name="idStatus" Type="Int32" Nullable="false" />
+          <Property Name="Pallet" Type="Int32" Nullable="false" />
+          <Property Name="EuroPalet" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sChildren">
+          <Key>
+            <PropertyRef Name="idChild" />
+          </Key>
+          <Property Name="idKontr" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+          <Property Name="nChild" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="idChild" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="DateBirth" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Comment" Type="String" MaxLength="180" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="StaffMove">
+          <Key>
+            <PropertyRef Name="IdStaffMove" />
+          </Key>
+          <Property Name="IdStaffMove" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="idKontr" Type="Int32" Nullable="false" />
+          <Property Name="idPost" Type="Int32" Nullable="false" />
+          <Property Name="DateS" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateE" Type="DateTime" Precision="3" />
+          <Property Name="idUnit" Type="Int32" Nullable="false" />
+          <Property Name="nDecree" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="idFirm" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tabel">
+          <Key>
+            <PropertyRef Name="id_row" />
+          </Key>
+          <Property Type="Int32" Name="id_row" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Decimal" Name="id_kontr" Nullable="false" Precision="9" Scale="0" />
+          <Property Type="DateTime" Name="time_end" Precision="3" />
+          <Property Type="DateTime" Name="time_start" Nullable="false" Precision="3" />
+          <Property Type="Int16" Name="type_row" Nullable="false" />
+          <Property Type="String" Name="commentary" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="id_online" />
+          <Property Type="String" Name="id_pc" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="contract">
+          <Key>
+            <PropertyRef Name="idConvention" />
+          </Key>
+          <Property Type="Int32" Name="idConvention" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Decimal" Name="id_firm" Nullable="false" Precision="9" Scale="0" />
+          <Property Type="Decimal" Name="id_kontr" Nullable="false" Precision="9" Scale="0" />
+          <Property Type="Int32" Name="id_contract" Nullable="false" />
+          <Property Type="Int32" Name="year" />
+          <Property Type="DateTime" Name="date_contract" Nullable="false" Precision="0" />
+          <Property Type="String" Name="nom_contract" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="prolong" Nullable="false" />
+          <Property Type="DateTime" Name="DateEndContract" Nullable="false" Precision="0" />
+          <Property Type="Int16" Name="DaysKred" />
+          <Property Type="Int16" Name="idTypeDaysKred" />
+          <Property Type="String" Name="fModul" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="commentary" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="commentaryShort" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="fDefault" />
+          <Property Type="Int16" Name="idStatusContract" Nullable="false" />
+          <Property Type="Byte" Name="f1c" />
+          <Property Type="Int32" Name="SumCred" />
+          <Property Type="Int32" Name="RealDayCred" />
+          <Property Type="Decimal" Name="MaxSumCred" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="SummContract" Precision="18" Scale="4" />
+          <Property Type="String" Name="idDoc" MaxLength="35" FixedLength="true" Unicode="false" />
+          <Property Type="Int16" Name="fBackOrder" Nullable="false" />
+          <Property Type="Int16" Name="fMarketAgreement" Nullable="false" />
+          <Property Type="Int16" Name="fSimpleFinPlan" Nullable="false" />
+          <Property Type="Int32" Name="MethodCalcPlan" />
+          <Property Type="Int32" Name="idFormContract" />
+          <Property Type="Int32" Name="idTypeDelivery" />
+          <Property Type="Int32" Name="idTypePay" />
+          <Property Type="Int32" Name="idFormPay" />
+          <Property Type="Int32" Name="fEDI" Nullable="false" />
+          <Property Type="String" Name="ComentForUPD" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="idTerritory" Nullable="false" />
+          <Property Type="Int32" Name="idDirect" Nullable="false" />
+          <Property Type="Int32" Name="fTranzit" Nullable="false" />
+          <Property Type="Int32" Name="idTranzitSklad" Nullable="false" />
+          <Property Name="fBackOrderInner" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="s_CondKontr">
+          <Key>
+            <PropertyRef Name="id_cond" />
+          </Key>
+          <Property Type="Byte" Name="id_cond" Nullable="false" />
+          <Property Type="String" Name="n_cond" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="id_new" Nullable="false" />
+        </EntityType>
+        <EntityType Name="spr_agent_kontr">
+          <Key>
+            <PropertyRef Name="id_direct" />
+            <PropertyRef Name="id_kontr" />
+            <PropertyRef Name="id_agent" />
+          </Key>
+          <Property Type="Decimal" Name="id_direct" Nullable="false" Precision="9" Scale="0" />
+          <Property Type="Decimal" Name="id_kontr" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="id_agent" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="last_compare" Precision="3" />
+          <Property Type="Byte" Name="compare" />
+          <Property Type="Byte" Name="gr_compare" />
+          <Property Type="Int32" Name="category" />
+          <Property Type="Byte" Name="id_day" />
+          <Property Type="Byte" Name="id_week" />
+          <Property Type="Decimal" Name="discount_real" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="PerDeviation" Precision="9" Scale="4" />
+        </EntityType>
+        <EntityType Name="tookBonus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="nomDoc" Nullable="false" MaxLength="35" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="IdDoc" Nullable="false" MaxLength="35" FixedLength="true" Unicode="false" />
+          <Property Type="Boolean" Name="status" Nullable="false" />
+          <Property Type="DateTime" Name="modDate" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="LogeOrder">
+          <Key>
+            <PropertyRef Name="idRow" />
+          </Key>
+          <Property Type="Int32" Name="idRow" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="idKontr" Nullable="false" />
+          <Property Type="DateTime" Name="DateAction" Nullable="false" Precision="3" />
+          <Property Type="Int16" Name="idTypeAction" Nullable="false" />
+          <Property Type="String" Name="ContentAction" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="fSendInfo" Nullable="false" />
+          <Property Type="Int32" Name="idtypedoc" />
+          <Property Type="String" Name="iddoc" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NameUser" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="sLogTypeAction">
+          <Key>
+            <PropertyRef Name="idTypeAction" />
+          </Key>
+          <Property Type="Int32" Name="idTypeAction" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="nTypeAction" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="fNeedForMail" Nullable="false" />
+          <Property Type="String" Name="SendTo" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="rRoleUser">
+          <Key>
+            <PropertyRef Name="IdKontr" />
+            <PropertyRef Name="IdRole" />
+          </Key>
+          <Property Type="Int32" Name="IdKontr" Nullable="false" />
+          <Property Type="Int32" Name="IdRole" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sRole">
+          <Key>
+            <PropertyRef Name="IdRole" />
+          </Key>
+          <Property Type="Int32" Name="IdRole" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="NRole" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Comment" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="spr_kontr">
+          <Key>
+            <PropertyRef Name="id_kontr" />
+          </Key>
+          <Property Type="Decimal" Name="id_kontr" Nullable="false" Precision="9" Scale="0" />
+          <Property Type="String" Name="n_kontr" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="n_kontr_full" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="n_kontr_short" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="n_board" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="adress_ur" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="adress_fact" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tel1" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tel2" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tel3" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tel4" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tel5" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="el_mail" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="inn" MaxLength="25" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="okonh" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="okpo" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="n_boss" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="n_gl_buh" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="n_cash" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="id_agent" Precision="9" Scale="0" />
+          <Property Type="Decimal" Name="id_torg" Precision="9" Scale="0" />
+          <Property Type="Decimal" Name="id_firm" Precision="9" Scale="0" />
+          <Property Type="Decimal" Name="in_tax_def" Precision="2" Scale="0" />
+          <Property Type="Int16" Name="id_region" />
+          <Property Type="Decimal" Name="id_road" Precision="9" Scale="0" />
+          <Property Type="Decimal" Name="t_serv" Precision="9" Scale="0" />
+          <Property Type="Byte" Name="id_cond" />
+          <Property Type="String" Name="faice" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Byte" Name="seller_bayer" Nullable="false" />
+          <Property Type="Byte" Name="employer" />
+          <Property Type="Byte" Name="agent" Nullable="false" />
+          <Property Type="Byte" Name="bank" Nullable="false" />
+          <Property Type="Byte" Name="mol" Nullable="false" />
+          <Property Type="Byte" Name="firma" Nullable="false" />
+          <Property Type="Byte" Name="investor_shareholder" Nullable="false" />
+          <Property Type="Byte" Name="ind_business" />
+          <Property Type="Byte" Name="torg" />
+          <Property Type="Decimal" Name="srok_kred" Precision="10" Scale="0" />
+          <Property Type="String" Name="name_user" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="id_user" Nullable="false" Precision="10" Scale="0" />
+          <Property Type="Decimal" Name="sql_id" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="id_post" Precision="18" Scale="0" />
+          <Property Type="Byte" Name="gr_compare" />
+          <Property Type="Byte" Name="group_inv" />
+          <Property Type="DateTime" Name="last_compare" Precision="3" />
+          <Property Type="Byte" Name="compare" Nullable="false" />
+          <Property Type="String" Name="commentary" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="kontr_group" />
+          <Property Type="Byte" Name="sort_group" />
+          <Property Type="Byte" Name="seller_bayer_10" Nullable="false" />
+          <Property Type="Int16" Name="driver" />
+          <Property Type="Byte" Name="category" />
+          <Property Type="String" Name="kpp" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="wholesale" />
+          <Property Type="Byte" Name="delivery" />
+          <Property Type="String" Name="login_www" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pass_www" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="id_level" />
+          <Property Type="Int16" Name="update_price" />
+          <Property Type="Decimal" Name="per_discount" Precision="18" Scale="5" />
+          <Property Type="Int16" Name="kol_n" Nullable="false" />
+          <Property Type="Int16" Name="id_filial" Nullable="false" />
+          <Property Type="Int16" Name="filial" Nullable="false" />
+          <Property Type="Decimal" Name="id_type_tov" Precision="18" Scale="0" />
+          <Property Type="String" Name="svid_nomer" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="svid_vidano" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="id_direct" Nullable="false" Precision="9" Scale="0" />
+          <Property Type="String" Name="n_kontr_title" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="autolink" Nullable="false" />
+          <Property Type="String" Name="ogrn" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="b_day" Precision="0" />
+          <Property Type="Decimal" Name="m_truck" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="v_truck" Precision="18" Scale="2" />
+          <Property Type="Int16" Name="post_cat" />
+          <Property Type="Byte" Name="salary_incl" />
+          <Property Type="Byte" Name="salary_type" />
+          <Property Type="Byte" Name="ticket_cond" Nullable="false" />
+          <Property Type="Decimal" Name="ticket_holder" Precision="9" Scale="0" />
+          <Property Type="Byte" Name="id_stamp" />
+          <Property Type="Int32" Name="pasport" />
+          <Property Type="String" Name="receipt_pasport" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="series_pasport" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="kred_sum" />
+          <Property Type="String" Name="driver_acc" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="kred_type" />
+          <Property Type="Int32" Name="kder_sum_kontr" />
+          <Property Type="Byte" Name="time_invoice" />
+          <Property Type="Byte" Name="k_rate" />
+          <Property Type="String" Name="Job" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Spec" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="id_ekontr" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="el_mail_corporate" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="print_form" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Type="Int16" Name="sfInDelivery" Nullable="false" />
+          <Property Type="String" Name="abc" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="icqNumber" />
+          <Property Type="Byte" Name="idCondEmpl" Nullable="false" />
+          <Property Type="String" Name="location" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="print_translate" />
+          <Property Type="Byte" Name="Retail" Nullable="false" />
+          <Property Type="String" Name="abc_estimate" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="presense_inn" Nullable="false" />
+          <Property Type="Byte" Name="presense_svid" Nullable="false" />
+          <Property Type="Int32" Name="idTownship" Nullable="false" />
+          <Property Type="Int32" Name="presense_pasport" Nullable="false" />
+          <Property Type="String" Name="n_lpr" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tel_lpr" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="buy_agent" Nullable="false" />
+          <Property Type="Int16" Name="fOrder" />
+          <Property Type="String" Name="pseudonym" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="bigcomment" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="idFond" Nullable="false" />
+          <Property Type="Byte" Name="supplier" Nullable="false" />
+          <Property Type="Byte" Name="SupplierService" Nullable="false" />
+          <Property Type="Byte" Name="f1c" Nullable="false" />
+          <Property Type="String" Name="storekeeper" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nbossr" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="firmfor1c" Nullable="false" />
+          <Property Type="Byte" Name="PassWithCar" Nullable="false" />
+          <Property Type="Int16" Name="TNInDelivery" Nullable="false" />
+          <Property Type="String" Name="PostOfficeBox" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="fTransportCompany" Nullable="false" />
+          <Property Type="Int16" Name="fPraisImag" />
+          <Property Type="Int32" Name="RateCompareMM" />
+          <Property Type="String" Name="latitube" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="longitube" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="PercentForBonuses" Nullable="false" Precision="9" Scale="4" />
+          <Property Type="Int16" Name="fNotIntegrationNakl" Nullable="false" />
+          <Property Type="String" Name="nPostForContract" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="fNewSaleContractForCash" />
+          <Property Type="String" Name="prefix" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="CountAccesseOrder" />
+          <Property Type="String" Name="SexBossFoContract" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="TypeDeliveryDef" Nullable="false" />
+          <Property Type="Int32" Name="FederalImag" Nullable="false" />
+          <Property Type="Int16" Name="fNotUsePriceRec" />
+          <Property Type="DateTime" Name="svidDate" Precision="3" />
+          <Property Type="Int32" Name="idSystemTax" />
+          <Property Type="Int32" Name="idFirmOil" />
+          <Property Type="Int16" Name="fneedunload" Nullable="false" />
+          <Property Type="Int16" Name="fNotDivision" Nullable="false" />
+          <Property Type="Int16" Name="idTypePayDef" />
+          <Property Type="Int32" Name="TimeReaction" />
+          <Property Type="Byte" Name="fCustomer" Nullable="false" />
+          <Property Type="Byte" Name="fSupplier" Nullable="false" />
+          <Property Type="Byte" Name="fEconomicEntity" Nullable="false" />
+          <Property Type="Byte" Name="fPointOfStorage" Nullable="false" />
+          <Property Type="Byte" Name="fWorkWithOil" Nullable="false" />
+          <Property Type="Byte" Name="fWorkWithAutoParts" Nullable="false" />
+          <Property Type="Byte" Name="fNeedTTNInDelivery" Nullable="false" />
+        </EntityType>
+        <ComplexType Name="EordrUser">
+          <Property Type="Int32" Name="idkontr" Nullable="true" />
+          <Property Type="String" Name="n_kontr" Nullable="false" MaxLength="255" />
+          <Property Type="Int32" Name="category" Nullable="true" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="contactname" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="contacttel" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="login_www" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pass_www" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="idagent" Nullable="true" />
+          <Property Type="String" Name="agentfio" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="agenttelcorp" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="agenttelvn" Nullable="false" MaxLength="48" />
+          <Property Type="String" Name="agentemail" Nullable="true" MaxLength="80" />
+          <Property Type="String" Name="emailcredit" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="emailcontract" Nullable="true" MaxLength="255" />
+          <Property Type="Int16" Name="CountAccesseOrder" Nullable="false" />
+          <Property Type="String" Name="emailAccessRegion" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="SchoolTPAdmin" Nullable="false" />
+          <Property Type="Int32" Name="SchoolTPUser" Nullable="false" />
+          <Property Type="Int32" Name="ExpandedInfo" Nullable="false" />
+          <Property Type="Decimal" Name="id_torg" Nullable="true" Precision="9" Scale="0" />
+          <Property Type="Int32" Name="fneedoffer" Nullable="false" />
+          <Property Type="Int32" Name="idconvoffert" Nullable="false" />
+          <Property Type="Int32" Name="flpr" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="rKontrDecree">
+          <Key>
+            <PropertyRef Name="IdKontrDecree" />
+          </Key>
+          <Property Type="Int32" Name="IdKontrDecree" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="IdDecree" Nullable="false" />
+          <Property Type="Int32" Name="IdKontr" Nullable="false" />
+          <Property Type="Boolean" Name="fDossier" Nullable="false" />
+          <Property Type="Boolean" Name="fSee" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="idCompany" />
+          </Key>
+          <Property Name="idCompany" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="nCompany" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="nCity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CompanyEntity">
+          <Key>
+            <PropertyRef Name="idCompanyEntity" />
+          </Key>
+          <Property Name="idCompanyEntity" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="idCompany" Type="Int32" Nullable="false" />
+          <Property Name="nEntity" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="idCompanyTemp" Type="Int32" Nullable="false" />
+          <Property Name="fUr" Type="Int32" Nullable="false" />
+          <Property Name="fPlace" Type="Int32" Nullable="false" />
+          <Property Name="fSP" Type="Int32" Nullable="false" />
+          <Property Name="fTD" Type="Int32" Nullable="false" />
+          <Property Name="fTP" Type="Int32" Nullable="false" />
+          <Property Name="iKontr" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EntityStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Decree"><EntityTypeMapping TypeName="Entity.Decree"><MappingFragment StoreEntitySet="Decree">
+            <ScalarProperty Name="nSign" ColumnName="nSign" />
+                <ScalarProperty Name="nTypeSign" ColumnName="nTypeSign" />
+                <ScalarProperty Name="TitleDecree" ColumnName="TitleDecree" />
+                <ScalarProperty Name="NomDecree" ColumnName="NomDecree" />
+                <ScalarProperty Name="IdDecree" ColumnName="IdDecree" />
+            <ScalarProperty Name="DateDecree" ColumnName="DateDecree" />
+            <ScalarProperty Name="nDecree" ColumnName="nDecree" />
+            <ScalarProperty Name="Content" ColumnName="Content" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="sAutoDelivery"><EntityTypeMapping TypeName="Entity.sAutoDelivery"><MappingFragment StoreEntitySet="sAutoDelivery">
+            <ScalarProperty Name="idAuto" ColumnName="idAuto" />
+            <ScalarProperty Name="nAuto" ColumnName="nAuto" />
+            <ScalarProperty Name="Tonnage" ColumnName="Tonnage" />
+            <ScalarProperty Name="Volume" ColumnName="Volume" />
+            <ScalarProperty Name="RegNumber" ColumnName="RegNumber" />
+            <ScalarProperty Name="OurAuto" ColumnName="OurAuto" />
+            <ScalarProperty Name="idDriverDefault" ColumnName="idDriverDefault" />
+            <ScalarProperty Name="idStatus" ColumnName="idStatus" />
+            <ScalarProperty Name="Pallet" ColumnName="Pallet" />
+            <ScalarProperty Name="EuroPalet" ColumnName="EuroPalet" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="sChildren"><EntityTypeMapping TypeName="Entity.sChildren"><MappingFragment StoreEntitySet="sChildren">
+            <ScalarProperty Name="idKontr" ColumnName="idKontr" />
+            <ScalarProperty Name="nChild" ColumnName="nChild" />
+            <ScalarProperty Name="idChild" ColumnName="idChild" />
+            <ScalarProperty Name="DateBirth" ColumnName="DateBirth" />
+            <ScalarProperty Name="Comment" ColumnName="Comment" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="StaffMove"><EntityTypeMapping TypeName="Entity.StaffMove"><MappingFragment StoreEntitySet="StaffMove">
+            <ScalarProperty Name="IdStaffMove" ColumnName="IdStaffMove" />
+            <ScalarProperty Name="idKontr" ColumnName="idKontr" />
+            <ScalarProperty Name="idPost" ColumnName="idPost" />
+            <ScalarProperty Name="DateS" ColumnName="DateS" />
+            <ScalarProperty Name="DateE" ColumnName="DateE" />
+            <ScalarProperty Name="idUnit" ColumnName="idUnit" />
+            <ScalarProperty Name="nDecree" ColumnName="nDecree" />
+            <ScalarProperty Name="idFirm" ColumnName="idFirm" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tabel">
+            <EntityTypeMapping TypeName="Entity.tabel">
+              <MappingFragment StoreEntitySet="tabel">
+                <ScalarProperty Name="id_pc" ColumnName="id_pc" />
+                <ScalarProperty Name="id_online" ColumnName="id_online" />
+                <ScalarProperty Name="commentary" ColumnName="commentary" />
+                <ScalarProperty Name="type_row" ColumnName="type_row" />
+                <ScalarProperty Name="time_start" ColumnName="time_start" />
+                <ScalarProperty Name="time_end" ColumnName="time_end" />
+                <ScalarProperty Name="id_kontr" ColumnName="id_kontr" />
+                <ScalarProperty Name="id_row" ColumnName="id_row" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contract">
+            <EntityTypeMapping TypeName="Entity.contract">
+              <MappingFragment StoreEntitySet="contract">
+                <ScalarProperty Name="fBackOrderInner" ColumnName="fBackOrderInner" />
+                <ScalarProperty Name="idTranzitSklad" ColumnName="idTranzitSklad" />
+                <ScalarProperty Name="fTranzit" ColumnName="fTranzit" />
+                <ScalarProperty Name="idDirect" ColumnName="idDirect" />
+                <ScalarProperty Name="idTerritory" ColumnName="idTerritory" />
+                <ScalarProperty Name="ComentForUPD" ColumnName="ComentForUPD" />
+                <ScalarProperty Name="fEDI" ColumnName="fEDI" />
+                <ScalarProperty Name="idFormPay" ColumnName="idFormPay" />
+                <ScalarProperty Name="idTypePay" ColumnName="idTypePay" />
+                <ScalarProperty Name="idTypeDelivery" ColumnName="idTypeDelivery" />
+                <ScalarProperty Name="idFormContract" ColumnName="idFormContract" />
+                <ScalarProperty Name="MethodCalcPlan" ColumnName="MethodCalcPlan" />
+                <ScalarProperty Name="fSimpleFinPlan" ColumnName="fSimpleFinPlan" />
+                <ScalarProperty Name="fMarketAgreement" ColumnName="fMarketAgreement" />
+                <ScalarProperty Name="fBackOrder" ColumnName="fBackOrder" />
+                <ScalarProperty Name="idDoc" ColumnName="idDoc" />
+                <ScalarProperty Name="SummContract" ColumnName="SummContract" />
+                <ScalarProperty Name="MaxSumCred" ColumnName="MaxSumCred" />
+                <ScalarProperty Name="RealDayCred" ColumnName="RealDayCred" />
+                <ScalarProperty Name="SumCred" ColumnName="SumCred" />
+                <ScalarProperty Name="f1c" ColumnName="f1c" />
+                <ScalarProperty Name="idStatusContract" ColumnName="idStatusContract" />
+                <ScalarProperty Name="fDefault" ColumnName="fDefault" />
+                <ScalarProperty Name="commentaryShort" ColumnName="commentaryShort" />
+                <ScalarProperty Name="commentary" ColumnName="commentary" />
+                <ScalarProperty Name="fModul" ColumnName="fModul" />
+                <ScalarProperty Name="idTypeDaysKred" ColumnName="idTypeDaysKred" />
+                <ScalarProperty Name="DaysKred" ColumnName="DaysKred" />
+                <ScalarProperty Name="DateEndContract" ColumnName="DateEndContract" />
+                <ScalarProperty Name="prolong" ColumnName="prolong" />
+                <ScalarProperty Name="nom_contract" ColumnName="nom_contract" />
+                <ScalarProperty Name="date_contract" ColumnName="date_contract" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="id_contract" ColumnName="id_contract" />
+                <ScalarProperty Name="id_kontr" ColumnName="id_kontr" />
+                <ScalarProperty Name="id_firm" ColumnName="id_firm" />
+                <ScalarProperty Name="idConvention" ColumnName="idConvention" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="s_CondKontr">
+            <EntityTypeMapping TypeName="Entity.s_CondKontr">
+              <MappingFragment StoreEntitySet="s_CondKontr">
+                <ScalarProperty Name="id_new" ColumnName="id_new" />
+                <ScalarProperty Name="n_cond" ColumnName="n_cond" />
+                <ScalarProperty Name="id_cond" ColumnName="id_cond" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="spr_agent_kontr">
+            <EntityTypeMapping TypeName="Entity.spr_agent_kontr">
+              <MappingFragment StoreEntitySet="spr_agent_kontr">
+                <ScalarProperty Name="PerDeviation" ColumnName="PerDeviation" />
+                <ScalarProperty Name="discount_real" ColumnName="discount_real" />
+                <ScalarProperty Name="id_week" ColumnName="id_week" />
+                <ScalarProperty Name="id_day" ColumnName="id_day" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="gr_compare" ColumnName="gr_compare" />
+                <ScalarProperty Name="compare" ColumnName="compare" />
+                <ScalarProperty Name="last_compare" ColumnName="last_compare" />
+                <ScalarProperty Name="id_agent" ColumnName="id_agent" />
+                <ScalarProperty Name="id_kontr" ColumnName="id_kontr" />
+                <ScalarProperty Name="id_direct" ColumnName="id_direct" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tookBonus">
+            <EntityTypeMapping TypeName="Entity.tookBonus">
+              <MappingFragment StoreEntitySet="tookBonus">
+                <ScalarProperty Name="modDate" ColumnName="modDate" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="IdDoc" ColumnName="IdDoc" />
+                <ScalarProperty Name="nomDoc" ColumnName="nomDoc" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogeOrder">
+            <EntityTypeMapping TypeName="Entity.LogeOrder">
+              <MappingFragment StoreEntitySet="LogeOrder">
+                <ScalarProperty Name="NameUser" ColumnName="NameUser" />
+                <ScalarProperty Name="iddoc" ColumnName="iddoc" />
+                <ScalarProperty Name="idtypedoc" ColumnName="idtypedoc" />
+                <ScalarProperty Name="fSendInfo" ColumnName="fSendInfo" />
+                <ScalarProperty Name="ContentAction" ColumnName="ContentAction" />
+                <ScalarProperty Name="idTypeAction" ColumnName="idTypeAction" />
+                <ScalarProperty Name="DateAction" ColumnName="DateAction" />
+                <ScalarProperty Name="idKontr" ColumnName="idKontr" />
+                <ScalarProperty Name="idRow" ColumnName="idRow" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sLogTypeAction">
+            <EntityTypeMapping TypeName="Entity.sLogTypeAction">
+              <MappingFragment StoreEntitySet="sLogTypeAction">
+                <ScalarProperty Name="SendTo" ColumnName="SendTo" />
+                <ScalarProperty Name="fNeedForMail" ColumnName="fNeedForMail" />
+                <ScalarProperty Name="nTypeAction" ColumnName="nTypeAction" />
+                <ScalarProperty Name="idTypeAction" ColumnName="idTypeAction" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rRoleUser">
+            <EntityTypeMapping TypeName="Entity.rRoleUser">
+              <MappingFragment StoreEntitySet="rRoleUser">
+                <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+                <ScalarProperty Name="IdKontr" ColumnName="IdKontr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sRole">
+            <EntityTypeMapping TypeName="Entity.sRole">
+              <MappingFragment StoreEntitySet="sRole">
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="NRole" ColumnName="NRole" />
+                <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="spr_kontr">
+            <EntityTypeMapping TypeName="Entity.spr_kontr">
+              <MappingFragment StoreEntitySet="spr_kontr">
+                <ScalarProperty Name="fNeedTTNInDelivery" ColumnName="fNeedTTNInDelivery" />
+                <ScalarProperty Name="fWorkWithAutoParts" ColumnName="fWorkWithAutoParts" />
+                <ScalarProperty Name="fWorkWithOil" ColumnName="fWorkWithOil" />
+                <ScalarProperty Name="fPointOfStorage" ColumnName="fPointOfStorage" />
+                <ScalarProperty Name="fEconomicEntity" ColumnName="fEconomicEntity" />
+                <ScalarProperty Name="fSupplier" ColumnName="fSupplier" />
+                <ScalarProperty Name="fCustomer" ColumnName="fCustomer" />
+                <ScalarProperty Name="TimeReaction" ColumnName="TimeReaction" />
+                <ScalarProperty Name="idTypePayDef" ColumnName="idTypePayDef" />
+                <ScalarProperty Name="fNotDivision" ColumnName="fNotDivision" />
+                <ScalarProperty Name="fneedunload" ColumnName="fneedunload" />
+                <ScalarProperty Name="idFirmOil" ColumnName="idFirmOil" />
+                <ScalarProperty Name="idSystemTax" ColumnName="idSystemTax" />
+                <ScalarProperty Name="svidDate" ColumnName="svidDate" />
+                <ScalarProperty Name="fNotUsePriceRec" ColumnName="fNotUsePriceRec" />
+                <ScalarProperty Name="FederalImag" ColumnName="FederalImag" />
+                <ScalarProperty Name="TypeDeliveryDef" ColumnName="TypeDeliveryDef" />
+                <ScalarProperty Name="SexBossFoContract" ColumnName="SexBossFoContract" />
+                <ScalarProperty Name="CountAccesseOrder" ColumnName="CountAccesseOrder" />
+                <ScalarProperty Name="prefix" ColumnName="prefix" />
+                <ScalarProperty Name="fNewSaleContractForCash" ColumnName="fNewSaleContractForCash" />
+                <ScalarProperty Name="nPostForContract" ColumnName="nPostForContract" />
+                <ScalarProperty Name="fNotIntegrationNakl" ColumnName="fNotIntegrationNakl" />
+                <ScalarProperty Name="PercentForBonuses" ColumnName="PercentForBonuses" />
+                <ScalarProperty Name="longitube" ColumnName="longitube" />
+                <ScalarProperty Name="latitube" ColumnName="latitube" />
+                <ScalarProperty Name="RateCompareMM" ColumnName="RateCompareMM" />
+                <ScalarProperty Name="fPraisImag" ColumnName="fPraisImag" />
+                <ScalarProperty Name="fTransportCompany" ColumnName="fTransportCompany" />
+                <ScalarProperty Name="PostOfficeBox" ColumnName="PostOfficeBox" />
+                <ScalarProperty Name="TNInDelivery" ColumnName="TNInDelivery" />
+                <ScalarProperty Name="PassWithCar" ColumnName="PassWithCar" />
+                <ScalarProperty Name="firmfor1c" ColumnName="firmfor1c" />
+                <ScalarProperty Name="nbossr" ColumnName="nbossr" />
+                <ScalarProperty Name="storekeeper" ColumnName="storekeeper" />
+                <ScalarProperty Name="f1c" ColumnName="f1c" />
+                <ScalarProperty Name="SupplierService" ColumnName="SupplierService" />
+                <ScalarProperty Name="supplier" ColumnName="supplier" />
+                <ScalarProperty Name="idFond" ColumnName="idFond" />
+                <ScalarProperty Name="bigcomment" ColumnName="bigcomment" />
+                <ScalarProperty Name="pseudonym" ColumnName="pseudonym" />
+                <ScalarProperty Name="fOrder" ColumnName="fOrder" />
+                <ScalarProperty Name="buy_agent" ColumnName="buy_agent" />
+                <ScalarProperty Name="tel_lpr" ColumnName="tel_lpr" />
+                <ScalarProperty Name="n_lpr" ColumnName="n_lpr" />
+                <ScalarProperty Name="presense_pasport" ColumnName="presense_pasport" />
+                <ScalarProperty Name="idTownship" ColumnName="idTownship" />
+                <ScalarProperty Name="presense_svid" ColumnName="presense_svid" />
+                <ScalarProperty Name="presense_inn" ColumnName="presense_inn" />
+                <ScalarProperty Name="abc_estimate" ColumnName="abc_estimate" />
+                <ScalarProperty Name="Retail" ColumnName="Retail" />
+                <ScalarProperty Name="print_translate" ColumnName="print_translate" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="idCondEmpl" ColumnName="idCondEmpl" />
+                <ScalarProperty Name="icqNumber" ColumnName="icqNumber" />
+                <ScalarProperty Name="abc" ColumnName="abc" />
+                <ScalarProperty Name="sfInDelivery" ColumnName="sfInDelivery" />
+                <ScalarProperty Name="print_form" ColumnName="print_form" />
+                <ScalarProperty Name="el_mail_corporate" ColumnName="el_mail_corporate" />
+                <ScalarProperty Name="id_ekontr" ColumnName="id_ekontr" />
+                <ScalarProperty Name="Spec" ColumnName="Spec" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="k_rate" ColumnName="k_rate" />
+                <ScalarProperty Name="time_invoice" ColumnName="time_invoice" />
+                <ScalarProperty Name="kder_sum_kontr" ColumnName="kder_sum_kontr" />
+                <ScalarProperty Name="kred_type" ColumnName="kred_type" />
+                <ScalarProperty Name="driver_acc" ColumnName="driver_acc" />
+                <ScalarProperty Name="kred_sum" ColumnName="kred_sum" />
+                <ScalarProperty Name="series_pasport" ColumnName="series_pasport" />
+                <ScalarProperty Name="receipt_pasport" ColumnName="receipt_pasport" />
+                <ScalarProperty Name="pasport" ColumnName="pasport" />
+                <ScalarProperty Name="id_stamp" ColumnName="id_stamp" />
+                <ScalarProperty Name="ticket_holder" ColumnName="ticket_holder" />
+                <ScalarProperty Name="ticket_cond" ColumnName="ticket_cond" />
+                <ScalarProperty Name="salary_type" ColumnName="salary_type" />
+                <ScalarProperty Name="salary_incl" ColumnName="salary_incl" />
+                <ScalarProperty Name="post_cat" ColumnName="post_cat" />
+                <ScalarProperty Name="v_truck" ColumnName="v_truck" />
+                <ScalarProperty Name="m_truck" ColumnName="m_truck" />
+                <ScalarProperty Name="b_day" ColumnName="b_day" />
+                <ScalarProperty Name="ogrn" ColumnName="ogrn" />
+                <ScalarProperty Name="autolink" ColumnName="autolink" />
+                <ScalarProperty Name="n_kontr_title" ColumnName="n_kontr_title" />
+                <ScalarProperty Name="id_direct" ColumnName="id_direct" />
+                <ScalarProperty Name="svid_vidano" ColumnName="svid_vidano" />
+                <ScalarProperty Name="svid_nomer" ColumnName="svid_nomer" />
+                <ScalarProperty Name="id_type_tov" ColumnName="id_type_tov" />
+                <ScalarProperty Name="filial" ColumnName="filial" />
+                <ScalarProperty Name="id_filial" ColumnName="id_filial" />
+                <ScalarProperty Name="kol_n" ColumnName="kol_n" />
+                <ScalarProperty Name="per_discount" ColumnName="per_discount" />
+                <ScalarProperty Name="update_price" ColumnName="update_price" />
+                <ScalarProperty Name="id_level" ColumnName="id_level" />
+                <ScalarProperty Name="pass_www" ColumnName="pass_www" />
+                <ScalarProperty Name="login_www" ColumnName="login_www" />
+                <ScalarProperty Name="delivery" ColumnName="delivery" />
+                <ScalarProperty Name="wholesale" ColumnName="wholesale" />
+                <ScalarProperty Name="kpp" ColumnName="kpp" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="driver" ColumnName="driver" />
+                <ScalarProperty Name="seller_bayer_10" ColumnName="seller_bayer_10" />
+                <ScalarProperty Name="sort_group" ColumnName="sort_group" />
+                <ScalarProperty Name="kontr_group" ColumnName="kontr_group" />
+                <ScalarProperty Name="commentary" ColumnName="commentary" />
+                <ScalarProperty Name="compare" ColumnName="compare" />
+                <ScalarProperty Name="last_compare" ColumnName="last_compare" />
+                <ScalarProperty Name="group_inv" ColumnName="group_inv" />
+                <ScalarProperty Name="gr_compare" ColumnName="gr_compare" />
+                <ScalarProperty Name="id_post" ColumnName="id_post" />
+                <ScalarProperty Name="sql_id" ColumnName="sql_id" />
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="name_user" ColumnName="name_user" />
+                <ScalarProperty Name="srok_kred" ColumnName="srok_kred" />
+                <ScalarProperty Name="torg" ColumnName="torg" />
+                <ScalarProperty Name="ind_business" ColumnName="ind_business" />
+                <ScalarProperty Name="investor_shareholder" ColumnName="investor_shareholder" />
+                <ScalarProperty Name="firma" ColumnName="firma" />
+                <ScalarProperty Name="mol" ColumnName="mol" />
+                <ScalarProperty Name="bank" ColumnName="bank" />
+                <ScalarProperty Name="agent" ColumnName="agent" />
+                <ScalarProperty Name="employer" ColumnName="employer" />
+                <ScalarProperty Name="seller_bayer" ColumnName="seller_bayer" />
+                <ScalarProperty Name="faice" ColumnName="faice" />
+                <ScalarProperty Name="id_cond" ColumnName="id_cond" />
+                <ScalarProperty Name="t_serv" ColumnName="t_serv" />
+                <ScalarProperty Name="id_road" ColumnName="id_road" />
+                <ScalarProperty Name="id_region" ColumnName="id_region" />
+                <ScalarProperty Name="in_tax_def" ColumnName="in_tax_def" />
+                <ScalarProperty Name="id_firm" ColumnName="id_firm" />
+                <ScalarProperty Name="id_torg" ColumnName="id_torg" />
+                <ScalarProperty Name="id_agent" ColumnName="id_agent" />
+                <ScalarProperty Name="n_cash" ColumnName="n_cash" />
+                <ScalarProperty Name="n_gl_buh" ColumnName="n_gl_buh" />
+                <ScalarProperty Name="n_boss" ColumnName="n_boss" />
+                <ScalarProperty Name="okpo" ColumnName="okpo" />
+                <ScalarProperty Name="okonh" ColumnName="okonh" />
+                <ScalarProperty Name="inn" ColumnName="inn" />
+                <ScalarProperty Name="el_mail" ColumnName="el_mail" />
+                <ScalarProperty Name="tel5" ColumnName="tel5" />
+                <ScalarProperty Name="tel4" ColumnName="tel4" />
+                <ScalarProperty Name="tel3" ColumnName="tel3" />
+                <ScalarProperty Name="tel2" ColumnName="tel2" />
+                <ScalarProperty Name="tel1" ColumnName="tel1" />
+                <ScalarProperty Name="adress_fact" ColumnName="adress_fact" />
+                <ScalarProperty Name="adress_ur" ColumnName="adress_ur" />
+                <ScalarProperty Name="n_board" ColumnName="n_board" />
+                <ScalarProperty Name="n_kontr_short" ColumnName="n_kontr_short" />
+                <ScalarProperty Name="n_kontr_full" ColumnName="n_kontr_full" />
+                <ScalarProperty Name="n_kontr" ColumnName="n_kontr" />
+                <ScalarProperty Name="id_kontr" ColumnName="id_kontr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="up_getEorderUser" FunctionName="Entity.Store.up_getEorderUser">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="Entity.EordrUser">
+                <ScalarProperty Name="idkontr" ColumnName="idkontr" />
+                <ScalarProperty Name="n_kontr" ColumnName="n_kontr" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="contactname" ColumnName="contactname" />
+                <ScalarProperty Name="contacttel" ColumnName="contacttel" />
+                <ScalarProperty Name="login_www" ColumnName="login_www" />
+                <ScalarProperty Name="pass_www" ColumnName="pass_www" />
+                <ScalarProperty Name="idagent" ColumnName="idagent" />
+                <ScalarProperty Name="agentfio" ColumnName="agentfio" />
+                <ScalarProperty Name="agenttelcorp" ColumnName="agenttelcorp" />
+                <ScalarProperty Name="agenttelvn" ColumnName="agenttelvn" />
+                <ScalarProperty Name="agentemail" ColumnName="agentemail" />
+                <ScalarProperty Name="emailcredit" ColumnName="emailcredit" />
+                <ScalarProperty Name="emailcontract" ColumnName="emailcontract" />
+                <ScalarProperty Name="CountAccesseOrder" ColumnName="CountAccesseOrder" />
+                <ScalarProperty Name="emailAccessRegion" ColumnName="emailAccessRegion" />
+                <ScalarProperty Name="SchoolTPAdmin" ColumnName="SchoolTPAdmin" />
+                <ScalarProperty Name="SchoolTPUser" ColumnName="SchoolTPUser" />
+                <ScalarProperty Name="ExpandedInfo" ColumnName="ExpandedInfo" />
+                <ScalarProperty Name="id_torg" ColumnName="id_torg" />
+                <ScalarProperty Name="fneedoffer" ColumnName="fneedoffer" />
+                <ScalarProperty Name="idconvoffert" ColumnName="idconvoffert" />
+                <ScalarProperty Name="flpr" ColumnName="flpr" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="rKontrDecree">
+            <EntityTypeMapping TypeName="Entity.rKontrDecree">
+              <MappingFragment StoreEntitySet="rKontrDecree">
+                <ScalarProperty Name="fSee" ColumnName="fSee" />
+                <ScalarProperty Name="fDossier" ColumnName="fDossier" />
+                <ScalarProperty Name="IdKontr" ColumnName="IdKontr" />
+                <ScalarProperty Name="IdDecree" ColumnName="IdDecree" />
+                <ScalarProperty Name="IdKontrDecree" ColumnName="IdKontrDecree" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Company">
+            <EntityTypeMapping TypeName="Entity.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="nCity" ColumnName="nCity" />
+                <ScalarProperty Name="nCompany" ColumnName="nCompany" />
+                <ScalarProperty Name="idCompany" ColumnName="idCompany" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompanyEntity">
+            <EntityTypeMapping TypeName="Entity.CompanyEntity">
+              <MappingFragment StoreEntitySet="CompanyEntity">
+                <ScalarProperty Name="iKontr" ColumnName="iKontr" />
+                <ScalarProperty Name="fTP" ColumnName="fTP" />
+                <ScalarProperty Name="fTD" ColumnName="fTD" />
+                <ScalarProperty Name="fSP" ColumnName="fSP" />
+                <ScalarProperty Name="fPlace" ColumnName="fPlace" />
+                <ScalarProperty Name="fUr" ColumnName="fUr" />
+                <ScalarProperty Name="idCompanyTemp" ColumnName="idCompanyTemp" />
+                <ScalarProperty Name="nEntity" ColumnName="nEntity" />
+                <ScalarProperty Name="idCompany" ColumnName="idCompany" />
+                <ScalarProperty Name="idCompanyEntity" ColumnName="idCompanyEntity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="EntityDB" ZoomLevel="68">
+        <EntityTypeShape EntityType="Entity.Decree" Width="1.5" PointX="0.75" PointY="0.75" Height="1.5923063151041665" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entity.sAutoDelivery" Width="1.5" PointX="0.75" PointY="3.75" Height="2.5783902994791656" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entity.sChildren" Width="1.5" PointX="2.75" PointY="3.75" Height="1.7566536458333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entity.StaffMove" Width="1.5" PointX="6.75" PointY="0.75" Height="2.2496956380208326" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entity.tabel" Width="1.5" PointX="0.75" PointY="7.75" Height="2.2496956380208317" />
+        <EntityTypeShape EntityType="Entity.contract" Width="1.5" PointX="7.375" PointY="3.75" Height="6.8514208984375031" />
+        <EntityTypeShape EntityType="Entity.s_CondKontr" Width="1.5" PointX="9.375" PointY="0.75" Height="1.4279589843749996" />
+        <EntityTypeShape EntityType="Entity.spr_agent_kontr" Width="1.5" PointX="9.375" PointY="3.75" Height="2.7427376302083353" />
+        <EntityTypeShape EntityType="Entity.tookBonus" Width="1.5" PointX="9.375" PointY="7.75" Height="1.7566536458333353" />
+        <EntityTypeShape EntityType="Entity.LogeOrder" Width="1.5" PointX="0.75" PointY="10.75" Height="2.4140429687500031" />
+        <EntityTypeShape EntityType="Entity.sLogTypeAction" Width="1.5" PointX="9.75" PointY="10.75" Height="1.5923063151041674" />
+        <EntityTypeShape EntityType="Entity.rRoleUser" Width="1.5" PointX="11.375" PointY="0.75" Height="1.2636116536458388" />
+        <EntityTypeShape EntityType="Entity.sRole" Width="1.5" PointX="11.375" PointY="3.75" Height="1.4279589843750031" />
+        <EntityTypeShape EntityType="Entity.spr_kontr" Width="1.5" PointX="3.375" PointY="6.75" Height="25.587016601562503" />
+        <EntityTypeShape EntityType="Entity.rKontrDecree" Width="1.5" PointX="3.375" PointY="0.75" Height="1.7566536458333388" />
+        <EntityTypeShape EntityType="Entity.Company" Width="1.5" PointX="11.375" PointY="6.75" />
+        <EntityTypeShape EntityType="Entity.CompanyEntity" Width="1.5" PointX="5.375" PointY="12.75" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

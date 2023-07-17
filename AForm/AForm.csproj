@@ -1,0 +1,763 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BAA45E0E-3447-481B-9C8E-96D1EEE2FC05}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AForm</RootNamespace>
+    <AssemblyName>AForm</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="Aspose.Cells, Version=23.6.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Cells.23.6.0\lib\net40\Aspose.Cells.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.SpellChecker.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v17.2.Extensions, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraSpellChecker.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DiadocApi, Version=1.83.0.0, Culture=neutral, PublicKeyToken=d18fd4c7ad3c243e, processorArchitecture=MSIL">
+      <HintPath>..\packages\DiadocSDK.1.83.0\lib\net35\DiadocApi.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport, Version=2019.3.26.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\FastReports\FastReport.Net Trial\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Bars, Version=2019.3.26.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\FastReports\FastReport.Net Trial\FastReport.Bars.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Editor, Version=2019.3.26.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\FastReports\FastReport.Net Trial\FastReport.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Install">
+      <HintPath>..\..\..\..\Program Files (x86)\FastReports\FastReport.Net Trial\FastReport.Install.dll</HintPath>
+    </Reference>
+    <Reference Include="SevenZipSharp, Version=0.64.3890.29348, Culture=neutral, PublicKeyToken=20de82c62b055c88, processorArchitecture=MSIL">
+      <HintPath>..\packages\SevenZipSharp.0.64\lib\SevenZipSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\ATable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Base\ATable.designer.cs">
+      <DependentUpon>ATable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\AWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\AWindow.designer.cs">
+      <DependentUpon>AWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\ColParam.cs" />
+    <Compile Include="Base\EColType.cs" />
+    <Compile Include="Base\Events.cs" />
+    <Compile Include="Base\EWindowAction.cs" />
+    <Compile Include="Base\FormDesigner.cs" />
+    <Compile Include="Base\ImprovedGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Base\WCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\WCheck.Designer.cs">
+      <DependentUpon>WCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\WindowOpener.cs" />
+    <Compile Include="Forms\AReport\DataClassesSalesReport.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClassesSalesReport.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AReport\SalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AReport\SalesReport.Designer.cs">
+      <DependentUpon>SalesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ArkonaBonus\ArkonaBonusArm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ArkonaBonus\ArkonaBonusArm.Designer.cs">
+      <DependentUpon>ArkonaBonusArm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ArkonaBonus\ArkonaBonusList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ArkonaBonus\ArkonaBonusList.Designer.cs">
+      <DependentUpon>ArkonaBonusList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ArkonaBonus\ArkonaBonusSettingsNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ArkonaBonus\ArkonaBonusSettingsNew.Designer.cs">
+      <DependentUpon>ArkonaBonusSettingsNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ArkonaBonus\BonusSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ArkonaBonus\BonusSettings.Designer.cs">
+      <DependentUpon>BonusSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmSettings.Designer.cs">
+      <DependentUpon>fmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HP\DecreeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HP\DecreeEdit.Designer.cs">
+      <DependentUpon>DecreeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HP\DecreeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HP\DecreeList.Designer.cs">
+      <DependentUpon>DecreeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HP\EmployeeCardEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HP\EmployeeCardEdit.designer.cs">
+      <DependentUpon>EmployeeCardEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HP\EmployeeCardList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HP\EmployeeCardList.designer.cs">
+      <DependentUpon>EmployeeCardList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kontr\CompanyEdit3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kontr\CompanyEdit3.Designer.cs">
+      <DependentUpon>CompanyEdit3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kontr\CompanyList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kontr\CompanyList.Designer.cs">
+      <DependentUpon>CompanyList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kontr\CompanySimple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kontr\CompanySimple.Designer.cs">
+      <DependentUpon>CompanySimple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Old\BuySalePlan\BuyPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Old\BuySalePlan\BuyPlan.Designer.cs">
+      <DependentUpon>BuyPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Old\BuySalePlan\ITableForm.cs" />
+    <Compile Include="Forms\Old\BuySalePlan\SalePlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Old\BuySalePlan\SalePlan.Designer.cs">
+      <DependentUpon>SalePlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Old\Other\ParserMskProductLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Old\Other\ParserMskProductLine.Designer.cs">
+      <DependentUpon>ParserMskProductLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Old\Other\WFLoadBuhRems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Old\Other\WFLoadBuhRems.Designer.cs">
+      <DependentUpon>WFLoadBuhRems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Old\Other\WFPerDebZad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Old\Other\WFPerDebZad.Designer.cs">
+      <DependentUpon>WFPerDebZad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Old\Other\WFPerKredZad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Old\Other\WFPerKredZad.Designer.cs">
+      <DependentUpon>WFPerKredZad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Old\Other\WFRepNaklHabCompl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Old\Other\WFRepNaklHabCompl.Designer.cs">
+      <DependentUpon>WFRepNaklHabCompl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\PriceFuture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\PriceFuture.Designer.cs">
+      <DependentUpon>PriceFuture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\PriceFutureSettinName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\PriceFutureSettinName.Designer.cs">
+      <DependentUpon>PriceFutureSettinName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\PriceParser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\PriceParser.Designer.cs">
+      <DependentUpon>PriceParser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\PriceParserRobot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\PriceParserRobot.Designer.cs">
+      <DependentUpon>PriceParserRobot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\StockSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\StockSetting.Designer.cs">
+      <DependentUpon>StockSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\SuplierAnswerRobot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\SuplierAnswerRobot.Designer.cs">
+      <DependentUpon>SuplierAnswerRobot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\WFListLoadedPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\WFListLoadedPrice.Designer.cs">
+      <DependentUpon>WFListLoadedPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\WFListSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\WFListSetting.Designer.cs">
+      <DependentUpon>WFListSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\WFParceInPallet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\WFParceInPallet.Designer.cs">
+      <DependentUpon>WFParceInPallet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\WFParceKol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\WFParceKol.Designer.cs">
+      <DependentUpon>WFParceKol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\WFParseAbc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Old\Parsers\WFParseAbc.Designer.cs">
+      <DependentUpon>WFParseAbc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reload1C\Load1C.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reload1C\Load1C.Designer.cs">
+      <DependentUpon>Load1C.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reload1C\Reload1CList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reload1C\Reload1CList.Designer.cs">
+      <DependentUpon>Reload1CList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AReport\Sales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AReport\Sales.Designer.cs">
+      <DependentUpon>Sales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Spr\DeliveryAndRoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Spr\DeliveryAndRoad.Designer.cs">
+      <DependentUpon>DeliveryAndRoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Spr\FormTestPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Spr\FormTestPrice.Designer.cs">
+      <DependentUpon>FormTestPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Temp\DiadocSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Temp\DiadocSettings.Designer.cs">
+      <DependentUpon>DiadocSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="realDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>realDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WFMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WFMain.designer.cs">
+      <DependentUpon>WFMain.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Base\ATable.resx">
+      <DependentUpon>ATable.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\AWindow.resx">
+      <DependentUpon>AWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\WCheck.resx">
+      <DependentUpon>WCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Forms\AReport\DataClassesSalesReport.dbml.layout">
+      <DependentUpon>DataClassesSalesReport.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Forms\AReport\SalesReport.resx">
+      <DependentUpon>SalesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ArkonaBonus\ArkonaBonusArm.resx">
+      <DependentUpon>ArkonaBonusArm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ArkonaBonus\ArkonaBonusList.resx">
+      <DependentUpon>ArkonaBonusList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ArkonaBonus\ArkonaBonusSettingsNew.resx">
+      <DependentUpon>ArkonaBonusSettingsNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ArkonaBonus\BonusSettings.resx">
+      <DependentUpon>BonusSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmSettings.resx">
+      <DependentUpon>fmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HP\DecreeEdit.resx">
+      <DependentUpon>DecreeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HP\DecreeList.resx">
+      <DependentUpon>DecreeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HP\EmployeeCardEdit.resx">
+      <DependentUpon>EmployeeCardEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HP\EmployeeCardList.resx">
+      <DependentUpon>EmployeeCardList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kontr\CompanyEdit3.resx">
+      <DependentUpon>CompanyEdit3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kontr\CompanyList.resx">
+      <DependentUpon>CompanyList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kontr\CompanySimple.resx">
+      <DependentUpon>CompanySimple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Old\BuySalePlan\BuyPlan.resx">
+      <DependentUpon>BuyPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Old\BuySalePlan\SalePlan.resx">
+      <DependentUpon>SalePlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Old\Other\ParserMskProductLine.resx">
+      <DependentUpon>ParserMskProductLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Old\Other\WFLoadBuhRems.resx">
+      <DependentUpon>WFLoadBuhRems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Old\Other\WFPerDebZad.resx">
+      <DependentUpon>WFPerDebZad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Old\Other\WFPerKredZad.resx">
+      <DependentUpon>WFPerKredZad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Old\Other\WFRepNaklHabCompl.resx">
+      <DependentUpon>WFRepNaklHabCompl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Old\Parsers\PriceFuture.resx">
+      <DependentUpon>PriceFuture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Old\Parsers\PriceFutureSettinName.resx">
+      <DependentUpon>PriceFutureSettinName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Old\Parsers\PriceParser.resx">
+      <DependentUpon>PriceParser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Old\Parsers\PriceParserRobot.resx">
+      <DependentUpon>PriceParserRobot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Old\Parsers\Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Old\Parsers\StockSetting.resx">
+      <DependentUpon>StockSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Old\Parsers\SuplierAnswerRobot.resx">
+      <DependentUpon>SuplierAnswerRobot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Old\Parsers\WFListLoadedPrice.resx">
+      <DependentUpon>WFListLoadedPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Old\Parsers\WFListSetting.resx">
+      <DependentUpon>WFListSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Old\Parsers\WFParceInPallet.resx">
+      <DependentUpon>WFParceInPallet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Old\Parsers\WFParceKol.resx">
+      <DependentUpon>WFParceKol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Old\Parsers\WFParseAbc.resx">
+      <DependentUpon>WFParseAbc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reload1C\Load1C.resx">
+      <DependentUpon>Load1C.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reload1C\Reload1CList.resx">
+      <DependentUpon>Reload1CList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AReport\Sales.resx">
+      <DependentUpon>Sales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Spr\DeliveryAndRoad.resx">
+      <DependentUpon>DeliveryAndRoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Spr\FormTestPrice.resx">
+      <DependentUpon>FormTestPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Temp\DiadocSettings.resx">
+      <DependentUpon>DiadocSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="WFMain.resx">
+      <DependentUpon>WFMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Forms\AReport\DataClassesSalesReport.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClassesSalesReport.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\ALogic.Model.EntityFrame.Company.datasource" />
+    <None Include="Properties\DataSources\ALogic.Model.EntityFrame.Contact.datasource" />
+    <None Include="Properties\DataSources\ALogic.Model.EntityFrame.Contract.datasource" />
+    <None Include="Properties\DataSources\ALogic.Model.EntityFrame.Contract1.datasource" />
+    <None Include="Properties\DataSources\ALogic.Model.EntityFrame.Decree.datasource" />
+    <None Include="Properties\DataSources\ALogic.Model.EntityFrame.Dept.datasource" />
+    <None Include="Properties\DataSources\ALogic.Model.EntityFrame.Legal.datasource" />
+    <None Include="Properties\DataSources\ALogic.Model.EntityFrame.Person.datasource" />
+    <None Include="Properties\DataSources\ALogic.Model.EntityFrame.spr_kontr.datasource" />
+    <None Include="Properties\DataSources\ALogic.Model.EntityFrame.Сompany.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
+    <Content Include="Resources\accept.png" />
+    <Content Include="Resources\acceptall.png" />
+    <Content Include="Resources\add.png" />
+    <None Include="Resources\addfooter_32x32.png" />
+    <Content Include="Resources\aol_messenger.png" />
+    <Content Include="Resources\application.png" />
+    <Content Include="Resources\application_add.png" />
+    <Content Include="Resources\application_cascade.png" />
+    <Content Include="Resources\application_delete.png" />
+    <Content Include="Resources\application_double.png" />
+    <Content Include="Resources\application_edit.png" />
+    <Content Include="Resources\application_form_add.png" />
+    <Content Include="Resources\application_form_magnify.png" />
+    <Content Include="Resources\application_from_storage.png" />
+    <Content Include="Resources\application_go.png" />
+    <Content Include="Resources\application_side_tree.png" />
+    <Content Include="Resources\arrow_up.png" />
+    <Content Include="Resources\billiard_marker.png" />
+    <Content Include="Resources\box.png" />
+    <Content Include="Resources\box_down.png" />
+    <Content Include="Resources\box_open.png" />
+    <Content Include="Resources\calculator.png" />
+    <Content Include="Resources\calendar.png" />
+    <Content Include="Resources\cancel.png" />
+    <Content Include="Resources\Cancel_16x16.png" />
+    <Content Include="Resources\Cancel_32x32.png" />
+    <Content Include="Resources\card_money.png" />
+    <Content Include="Resources\cart_delete.png" />
+    <Content Include="Resources\cart_go.png" />
+    <Content Include="Resources\cart_reload.png" />
+    <Content Include="Resources\clock_add.png" />
+    <Content Include="Resources\Close_32x32.png" />
+    <Content Include="Resources\cog.png" />
+    <Content Include="Resources\cog_go.png" />
+    <Content Include="Resources\coins.png" />
+    <Content Include="Resources\contact_email.png" />
+    <Content Include="Resources\customer_16x16.png" />
+    <Content Include="Resources\customer_32x32.png" />
+    <Content Include="Resources\database_yellow.png" />
+    <Content Include="Resources\delete.png" />
+    <Content Include="Resources\disk.png" />
+    <Content Include="Resources\document_import.png" />
+    <Content Include="Resources\document_move.png" />
+    <Content Include="Resources\document_signature.png" />
+    <Content Include="Resources\door_in.png" />
+    <None Include="realDataSet.xsc">
+      <DependentUpon>realDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="realDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>realDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="realDataSet.xss">
+      <DependentUpon>realDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\dots.png" />
+    <Content Include="Resources\filter.png" />
+    <Content Include="Resources\filter_add.png" />
+    <Content Include="Resources\filter_app.PNG" />
+    <Content Include="Resources\filter_delete.png" />
+    <Content Include="Resources\finance.png" />
+    <Content Include="Resources\find.png" />
+    <Content Include="Resources\flag_russia.png" />
+    <Content Include="Resources\flag_yellow.png" />
+    <Content Include="Resources\grid.png" />
+    <Content Include="Resources\group_box.png" />
+    <Content Include="Resources\historyitem_16x16.png" />
+    <Content Include="Resources\historyitem_32x32.png" />
+    <Content Include="Resources\home-features-1.png" />
+    <Content Include="Resources\inbox_download.png" />
+    <Content Include="Resources\information.png" />
+    <Content Include="Resources\interface_preferences.png" />
+    <Content Include="Resources\labels.png" />
+    <Content Include="Resources\lightning_add.png" />
+    <Content Include="Resources\lightning_delete.png" />
+    <Content Include="Resources\livejournal.png" />
+    <Content Include="Resources\Logo.png" />
+    <Content Include="Resources\lorry.png" />
+    <Content Include="Resources\magnifier.png" />
+    <Content Include="Resources\male-circle-512.png" />
+    <Content Include="Resources\no_requirements.png" />
+    <Content Include="Resources\page_copy.png" />
+    <Content Include="Resources\page_delete.png" />
+    <Content Include="Resources\pencil.png" />
+    <Content Include="Resources\pencil_add.png" />
+    <Content Include="Resources\pencil_delete.png" />
+    <Content Include="Resources\phone_16x16.png" />
+    <Content Include="Resources\price_comparison.png" />
+    <Content Include="Resources\printer.png" />
+    <Content Include="Resources\prohibition_button.png" />
+    <Content Include="Resources\properties_16x16.png" />
+    <Content Include="Resources\properties_32x32.png" />
+    <Content Include="Resources\radioactivity.png" />
+    <Content Include="Resources\refreshpivottable_16x16.png" />
+    <Content Include="Resources\refreshpivottable_32x32.png" />
+    <Content Include="Resources\save_as.png" />
+    <Content Include="Resources\save_exit.png" />
+    <Content Include="Resources\save_money.png" />
+    <Content Include="Resources\sort_ascending.png" />
+    <Content Include="Resources\sort_columns.png" />
+    <Content Include="Resources\stamp_pattern.png" />
+    <Content Include="Resources\stop.png" />
+    <Content Include="Resources\table_refresh.png" />
+    <Content Include="Resources\table_save.png" />
+    <Content Include="Resources\tick_ok.png" />
+    <Content Include="Resources\to_do_list.png" />
+    <Content Include="Resources\to_do_list_cheked_all.png" />
+    <Content Include="Resources\update.png" />
+    <Content Include="Resources\user_delete.png" />
+    <Content Include="Resources\user_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ALogic\ALogic.csproj">
+      <Project>{892E5F45-9E32-494D-A98B-092BA84541B2}</Project>
+      <Name>ALogic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\SevenZipSharp.Interop.19.0.1\build\SevenZipSharp.Interop.targets" Condition="Exists('..\packages\SevenZipSharp.Interop.19.0.1\build\SevenZipSharp.Interop.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\SevenZipSharp.Interop.19.0.1\build\SevenZipSharp.Interop.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SevenZipSharp.Interop.19.0.1\build\SevenZipSharp.Interop.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

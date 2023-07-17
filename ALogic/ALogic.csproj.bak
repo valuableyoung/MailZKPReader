@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{892E5F45-9E32-494D-A98B-092BA84541B2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ALogic</RootNamespace>
+    <AssemblyName>ALogic</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="DiadocApi, Version=1.83.0.0, Culture=neutral, PublicKeyToken=d18fd4c7ad3c243e, processorArchitecture=MSIL">
+      <HintPath>..\packages\DiadocSDK.1.83.0\lib\net35\DiadocApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel, Version=2.1.2.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x86\Debug\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x86\Debug\ExcelLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mail, Version=3.0.16356.1602, Culture=neutral, PublicKeyToken=6dc438ab78a525b3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x86\Debug\Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=1.18.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailKit.1.18.0\lib\net40\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MimeKit, Version=1.18.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.1.18.0\lib\net40\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="SevenZipSharp, Version=0.64.3890.29348, Culture=neutral, PublicKeyToken=20de82c62b055c88, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x86\Debug\SevenZipSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBConnector\Connection.cs" />
+    <Compile Include="DBConnector\DBAppParams.cs" />
+    <Compile Include="DBConnector\DBControlPosition.cs" />
+    <Compile Include="DBConnector\DBDate.cs" />
+    <Compile Include="DBConnector\DBExecutor.cs" />
+    <Compile Include="DBConnector\DBGroupSaver.cs" />
+    <Compile Include="DBConnector\DBUsers.cs" />
+    <Compile Include="DBConnector\DBWindowAction.cs" />
+    <Compile Include="DBConnector\EntityToTableConverter.cs" />
+    <Compile Include="DBConnector\ProjectProperty.cs" />
+    <Compile Include="DBConnector\StringWorker.cs" />
+    <Compile Include="Logic\ArkonaBonus\ArkonaBonusLogic.cs" />
+    <Compile Include="Logic\ADiadoc\DocCorrectCorrector.cs" />
+    <Compile Include="Logic\ADiadoc\DocCorrectCreator.cs" />
+    <Compile Include="Logic\ArkonaBonus\BonusSettingsLogic.cs" />
+    <Compile Include="Logic\Base\EntityToTableConverter.cs" />
+    <Compile Include="Logic\ADiadoc\DBDiadoc.cs" />
+    <Compile Include="Logic\ADiadoc\DiadocFunc.cs" />
+    <Compile Include="Logic\ADiadoc\DicdocMessageAction.cs" />
+    <Compile Include="Logic\ADiadoc\DocCorrector.cs" />
+    <Compile Include="Logic\ADiadoc\DocCreator.cs" />
+    <Compile Include="Logic\ADiadoc\DocData.cs" />
+    <Compile Include="Logic\ADiadoc\Sertificate.cs" />
+    <Compile Include="Logic\Heplers\ExcelXMLtoDataTable.cs" />
+    <Compile Include="Logic\Heplers\FileReader.cs" />
+    <Compile Include="Logic\Heplers\Messenger.cs" />
+    <Compile Include="Logic\HP\DecreeLogic.cs" />
+    <Compile Include="Logic\Old\BuySalePlan\BuyPlanLogic.cs" />
+    <Compile Include="Logic\Old\BuySalePlan\DBBuyPlan.cs" />
+    <Compile Include="Logic\Old\BuySalePlan\DBSalePlan.cs" />
+    <Compile Include="Logic\Old\BuySalePlan\BuyPlanEntity.cs" />
+    <Compile Include="Logic\Old\BuySalePlan\SalePlanEntity.cs" />
+    <Compile Include="Logic\Old\BuySalePlan\SalePlanLogic.cs" />
+    <Compile Include="Logic\Old\DebKredZad\DBRepKredZad.cs" />
+    <Compile Include="Logic\Old\DebKredZad\RepKredZadLogic.cs" />
+    <Compile Include="Logic\Old\LogAction.cs" />
+    <Compile Include="Logic\Old\Logger.cs" />
+    <Compile Include="Logic\Old\Parsers\DBLogParserPriceLoad.cs" />
+    <Compile Include="Logic\Old\Parsers\DBMailProperty.cs" />
+    <Compile Include="Logic\Old\Parsers\DBParserSettings.cs" />
+    <Compile Include="Logic\Old\Parsers\MailAnsReader.cs" />
+    <Compile Include="Logic\Old\Parsers\MailPriceReader.cs" />
+    <Compile Include="Logic\Old\Parsers\ParseFile.cs" />
+    <Compile Include="Logic\Old\Parsers\ParseFileParm.cs" />
+    <Compile Include="Logic\Old\Parsers\ParserFuture.cs" />
+    <Compile Include="Logic\Old\Parsers\ParserSettings.cs" />
+    <Compile Include="Logic\Old\Parsers\ParserSettingsColumn.cs" />
+    <Compile Include="Logic\Old\Parsers\ParserSettingsHelper.cs" />
+    <Compile Include="Logic\Old\Parsers\SheetNumber.cs" />
+    <Compile Include="Logic\Old\Parsers\SupplierAnswer.cs" />
+    <Compile Include="Logic\Reload1C\Reload1CLogic.cs" />
+    <Compile Include="Logic\Reload1C\Reload1CParams.cs" />
+    <Compile Include="Logic\Old\Reports\DataSale.cs" />
+    <Compile Include="Logic\Old\Reports\SalesRep.cs" />
+    <Compile Include="Logic\SPR\DBSprCur.cs" />
+    <Compile Include="Logic\SPR\Old\DeliveryAndRoad.cs" />
+    <Compile Include="Logic\SPR\DocLogic.cs" />
+    <Compile Include="Logic\SPR\Old\DBConvention.cs" />
+    <Compile Include="Logic\SPR\Old\DBOurFirm.cs" />
+    <Compile Include="Logic\SPR\Old\DBRegion.cs" />
+    <Compile Include="Logic\SPR\Old\DBSprBrend.cs" />
+    <Compile Include="Logic\SPR\Old\DBSprSegment.cs" />
+    <Compile Include="Logic\SPR\Old\DBSprSkladSupplier.cs" />
+    <Compile Include="Logic\SPR\Old\DBSprSupplier.cs" />
+    <Compile Include="Logic\SPR\Old\DBTime.cs" />
+    <Compile Include="Logic\SPR\RobotAnswer.cs" />
+    <Compile Include="Logic\SPR\sSkladSupplier.cs" />
+    <Compile Include="Logic\SPR\TempMailData.cs" />
+    <Compile Include="Logic\SPR\TestPrice.cs" />
+    <Compile Include="Logic\SPR\ValuteLogic.cs" />
+    <Compile Include="Logic\SPR\WindowAction.cs" />
+    <Compile Include="Logic\Base\ConrtolDesignLogic.cs" />
+    <Compile Include="Logic\Base\TableDesignLogic.cs" />
+    <Compile Include="Logic\Heplers\DateTimeHelper.cs" />
+    <Compile Include="Logic\HP\EmployeeCardLogic.cs" />
+    <Compile Include="DBConnector\DBTableDesign.cs" />
+    <Compile Include="Logic\SPR\SprLogic.cs" />
+    <Compile Include="Logic\SPR\User.cs" />
+    <Compile Include="Logic\Heplers\DayWeek.cs" />
+    <Compile Include="Model\Entites\HP\EmployeeCardEntity.cs" />
+    <Compile Include="Model\Entites\Invoice\InvoiceBuy.cs" />
+    <Compile Include="Model\Entites\Invoice\InvoiceBuyTov.cs" />
+    <Compile Include="Model\EntityFrame\Context.cs" />
+    <Compile Include="Model\EntityFrame\EntityDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EntityFrame\IDBEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <EntityDeploy Include="Model\EntityFrame\EntityDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EntityDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logic\Kontr\" />
+    <Folder Include="Model\Entites\Kontr\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,32 @@
+<Reference Include="Excel">
+      <HintPath>W:\GIT REPOSITORIES\DLL\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader">
+      <HintPath>W:\GIT REPOSITORIES\DLL\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet">
+      <HintPath>W:\GIT REPOSITORIES\DLL\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelLibrary">
+      <HintPath>W:\GIT REPOSITORIES\DLL\ExcelLibrary.dll</HintPath>
+    </Reference>
+
+<Reference Include="ICSharpCode.SharpZipLib, Version=0.85.2.329, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>W:\GIT REPOSITORIES\DLL\Другие версии\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Mail">
+      <HintPath>W:\GIT REPOSITORIES\DLL\Другие версии\Mail.dll</HintPath>
+    </Reference>
+
+
+<Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>W:\GIT REPOSITORIES\DLL\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+
+
+<Reference Include="SevenZipSharp">
+      <HintPath>W:\GIT REPOSITORIES\DLL\SevenZipSharp.dll</HintPath>
+    </Reference>
